@@ -42,7 +42,7 @@ public class Hug {
         return new HugGenerator();
     }
 
-    public void hug() {
+    public String hug() {
         if (type == HugType.AWKWARD) {
             if (length == HugLength.JUST_RIGHT) {
                 throw new InvalidHugException("Awkward hugs cannot be just right in length!");
@@ -53,8 +53,7 @@ public class Hug {
             }
         }
 
-        System.out.printf("%s gave %s a %s hug! It was %s! %s now feels %s!", hugger, huggee, type, length, huggee, emotion);
-
+        return String.format("%s gave %s a %s hug! It was %s! %s now feels %s!", hugger, huggee, type, length, huggee, emotion);
     }
 
     public static class HugGenerator {
@@ -93,10 +92,8 @@ public class Hug {
             return this;
         }
 
-        public Hug hug() {
-            Hug hug = new Hug(type, length, huggee, hugger, emotion);
-            hug.hug();
-            return hug;
+        public Hug create() {
+            return new Hug(type, length, huggee, hugger, emotion);
         }
 
     }
