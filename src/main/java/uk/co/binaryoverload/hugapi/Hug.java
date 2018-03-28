@@ -3,14 +3,14 @@ package uk.co.binaryoverload.hugapi;
 public class Hug {
 
     private HugType type;
-    private HugLenth length;
+    private HugLength length;
 
     private String huggee;
     private Emotion emotion;
 
     private String hugger;
 
-    private Hug(HugType type, HugLenth length, String huggee, String hugger, Emotion emotion) {
+    private Hug(HugType type, HugLength length, String huggee, String hugger, Emotion emotion) {
         this.type = type;
         this.length = length;
         this.huggee = huggee;
@@ -22,7 +22,7 @@ public class Hug {
         return type;
     }
 
-    public HugLenth getLength() {
+    public HugLength getLength() {
         return length;
     }
 
@@ -44,9 +44,9 @@ public class Hug {
 
     public void hug() {
         if (type == HugType.AWKWARD) {
-            if (length == HugLenth.JUST_RIGHT) {
+            if (length == HugLength.JUST_RIGHT) {
                 throw new InvalidHugException("Awkward hugs cannot be just right in length!");
-            } else if (length == HugLenth.TOO_SHORT) {
+            } else if (length == HugLength.TOO_SHORT) {
                 throw new InvalidHugException("Awkward hugs are always longer than the huggee wants!");
             } else if (emotion != Emotion.UNCOMFORTABLE || emotion != Emotion.AWKWARD) {
                 throw new InvalidHugException("This is too suspicious! Awkward hugs need awkwardness go damn it!");
@@ -61,7 +61,7 @@ public class Hug {
 
         private HugType type = HugType.FRIENDLY;
 
-        private HugLenth length = HugLenth.JUST_RIGHT;
+        private HugLength length = HugLength.JUST_RIGHT;
 
         private String huggee;
         private Emotion emotion = Emotion.EMOTIONLESS;
@@ -73,7 +73,7 @@ public class Hug {
             return this;
         }
 
-        public HugGenerator length(HugLenth length) {
+        public HugGenerator length(HugLength length) {
             this.length = length;
             return this;
         }
@@ -117,7 +117,7 @@ public class Hug {
         }
     }
 
-    public enum HugLenth {
+    public enum HugLength {
         JUST_RIGHT,
         TOO_LONG,
         TOO_SHORT,

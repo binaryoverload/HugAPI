@@ -7,7 +7,7 @@ public class Main {
                 .hugger("Walshy")
                 .huggee("William")
                 .type(Hug.HugType.FRIENDLY)
-                .length(Hug.HugLenth.JUST_RIGHT)
+                .length(Hug.HugLength.JUST_RIGHT)
                 .emotion(Hug.Emotion.HAPPY)
                 .hug();
     }
